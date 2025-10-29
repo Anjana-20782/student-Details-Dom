@@ -1,0 +1,106 @@
+/* ---------- 1. Base Layout ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f6faf9, #eff0f3); /* Calm blue gradient */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- 2. Form Container ---------- */
+form {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  width: 420px;
+  max-width: 90%;
+  animation: fadeIn 0.6s ease;
+}
+
+/* ---------- 3. Label Style ---------- */
+form label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2c3e50;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+/* ---------- 4. Input Fields ---------- */
+form input {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: 1.8px solid #dcdcdc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+/* Focused Input */
+form input:focus {
+  border-color: #74b9ff;
+  box-shadow: 0 0 6px rgba(116, 185, 255, 0.4);
+}
+
+/* ---------- 5. Submit Button ---------- */
+form input[type="submit"],
+form button {
+  width: 100%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+form input[type="submit"]:hover,
+form button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 117, 252, 0.3);
+}
+
+/* ---------- 6. Responsive Design ---------- */
+@media (max-width: 480px) {
+  form {
+    width: 90%;
+    padding: 30px 25px;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  form input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  form input[type="submit"] {
+    font-size: 15px;
+    padding: 13px 0;
+  }
+}
+
+/* ---------- 7. Entry Animation ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
