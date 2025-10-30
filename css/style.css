@@ -97,3 +97,27 @@ body {
 a{
   text-decoration: none;
 }
+
+/* 🗑️ Delete button style */
+.delete-btn {
+  background-color: #ec2828;   /* red color */
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 10px;
+}
+
+/* Hover effect */
+.delete-btn:hover {
+  background-color: #d90429;   /* darker red */
+  transform: scale(1.05);
+}
+
+/* Optional: small shadow */
+.delete-btn:active {
+  transform: scale(0.95);
+}

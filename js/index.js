@@ -17,7 +17,8 @@ window.addEventListener("DOMContentLoaded", () => {
         <p><strong>Address:</strong> ${student.userAddress || "N/A"}</p>
         <p><strong>DOB:</strong> ${student.userDob || "N/A"}</p>
       </a>
-      <button onclick="deleteStudent(${index})">Delete</button>
+       <button class="delete-btn" onclick="deleteStudent(${index})">Delete</button>
+
     </div>
   `).join("");
 });
