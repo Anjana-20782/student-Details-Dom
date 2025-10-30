@@ -43,7 +43,7 @@ body {
 }
 
 
-#back-btn {
+#back-link {
   margin-top: 20px;
   padding: 10px 20px;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
@@ -52,8 +52,9 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  width: 70px;
 }
 
-#back-btn:hover {
+#back-link:hover {
   background: linear-gradient(135deg, #2575fc, #6a11cb);
 }
