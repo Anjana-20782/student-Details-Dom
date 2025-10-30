@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const student = students[selectedIndex];
 
-  // 🧠 Set all values safely
+  // Set all values safely
   document.getElementById("profile-pic").src = student.userImage || student.pic || "";
   document.getElementById("profile-name").textContent = student.userName || "No Name";
   document.getElementById("profile-email").textContent = student.userEmail || "N/A";
@@ -20,8 +20,11 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("profile-city").textContent = student.userCity || "N/A";
   document.getElementById("profile-pincode").textContent = student.userPincode || "N/A";
   document.getElementById("profile-dob").textContent = student.userDob || "N/A";
-});
 
-document.getElementById("back-btn").addEventListener("click", () => {
-  window.location.href = "../index.html";
+  //  Create dynamic back link with query parameters
+  const backLink = document.getElementById("back-link");
+  if (backLink) {
+    // Add query parameter dynamically (UI param)
+    backLink.href = `../index.html?index=${selectedIndex}&name=${encodeURIComponent(student.userName)}`;
+  }
 });
