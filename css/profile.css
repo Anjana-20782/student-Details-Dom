@@ -41,3 +41,19 @@ body {
   font-size: 16px;
   margin: 8px 0;
 }
+
+
+#back-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#back-btn:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
