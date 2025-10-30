@@ -21,3 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("profile-pincode").textContent = student.userPincode || "N/A";
   document.getElementById("profile-dob").textContent = student.userDob || "N/A";
 });
+
+document.getElementById("back-btn").addEventListener("click", () => {
+  window.location.href = "../index.html";
+});
