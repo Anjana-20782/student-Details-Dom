@@ -99,8 +99,8 @@ a{
 }
 
 /* 🗑️ Delete button style */
-.delete-btn {
-  background-color: #ec2828;   /* red color */
+/* .delete-btn {
+  background-color: #ec2828;   
   color: white;
   border: none;
   padding: 8px 14px;
@@ -111,13 +111,13 @@ a{
   margin: 10px;
 }
 
-/* Hover effect */
+
 .delete-btn:hover {
-  background-color: #d90429;   /* darker red */
+  background-color: #d90429;  
   transform: scale(1.05);
 }
 
-/* Optional: small shadow */
+
 .delete-btn:active {
   transform: scale(0.95);
-}
+} */

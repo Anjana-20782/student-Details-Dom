@@ -77,6 +77,46 @@ form button:hover {
   box-shadow: 0 6px 15px rgba(37, 117, 252, 0.3);
 }
 
+/* image preview wrapper */
+.image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12px 0 18px;
+}
+
+/* preview image */
+.image-preview {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%; /* circular preview */
+  object-fit: cover;
+  border: 3px solid rgba(102, 126, 234, 0.25);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.12);
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* small hover zoom */
+.image-preview:hover {
+  transform: scale(1.03);
+}
+
+/* hide until image is loaded */
+.hidden {
+  display: none;
+}
+
+/* file input styling (optional) */
+.image-section input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px dashed #dcdcdc;
+  background: #fafafa;
+  cursor: pointer;
+}
+
 /* ---------- 6. Responsive Design ---------- */
 @media (max-width: 480px) {
   form {

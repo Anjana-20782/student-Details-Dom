@@ -58,3 +58,48 @@ body {
 #back-link:hover {
   background: linear-gradient(135deg, #2575fc, #6a11cb);
 }
+
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Back Button */
+#backBtn {
+  background-color: #6c757d;
+  color: white;
+}
+#backBtn:hover {
+  background-color: #5a6268;
+}
+
+/* Edit Button (new style — changed color) */
+#editBtn {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 0 10px rgba(0,123,255,0.5);
+}
+#editBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Delete Button */
+#deleteBtn {
+  background-color: #dc3545;
+  color: white;
+}
+#deleteBtn:hover {
+  background-color: #c82333;
+}

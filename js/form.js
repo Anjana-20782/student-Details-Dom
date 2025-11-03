@@ -21,6 +21,15 @@ function setInputs() {
         <div class="btn">
           <button id="${field.id}" type="${field.type}">${field.placeholder}</button>
         </div>`;
+    } else if (field.type === "file") {
+      // file input with preview image above it
+      str += `
+        <div class="image-section">
+          <label for="${field.id}">${field.placeholder}</label>
+          <img id="addPreviewImg" src="" alt="Preview" class="image-preview hidden">
+          <input name="${field.name}" id="${field.id}" placeholder="${field.placeholder}" type="${field.type}" accept="image/*">
+        </div>
+      `;
     } else {
       str += `
         <div>
@@ -31,43 +40,25 @@ function setInputs() {
   });
 
   document.getElementById("form").innerHTML = str;
+
+  // Add change listener for image preview after inputs are rendered
+  const fileInput = document.getElementById("userImage");
+  const previewImg = document.getElementById("addPreviewImg");
+
+  fileInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) {
+      previewImg.src = "";
+      previewImg.classList.add("hidden");
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      previewImg.src = event.target.result;
+      previewImg.classList.remove("hidden");
+    };
+    reader.readAsDataURL(file);
+  });
 }
 
 setInputs();
-
-document.getElementById("form").addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let obj = {};
-  let inputs = document.getElementsByTagName("input");
-
-  for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].type !== "file" && inputs[i].type !== "submit") {
-      obj[inputs[i].id] = inputs[i].value;
-    }
-  }
-
-  let fileInput = document.getElementById("userImage");
-  let file = fileInput.files[0];
-
-
-  if (file) {
-    let reader = new FileReader();
-    reader.onload = function(event) {
-      obj.pic = event.target.result; // image in base64
-      saveStudent(obj);
-    };
-    reader.readAsDataURL(file);
-  } else {
-    obj.pic = "";
-    saveStudent(obj);
-  }
-});
-
-function saveStudent(studentObj) {
- 
-  let students = JSON.parse(localStorage.getItem("students")) || [];
-  students.push(studentObj);
-  localStorage.setItem("students", JSON.stringify(students));
-  window.location.href = "../index.html";
-}
